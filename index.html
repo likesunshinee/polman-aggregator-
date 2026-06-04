@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polman Bandung — Portal Layanan Terpadu</title>
-    <meta name="description" content="Aggregator layanan digital Politeknik Manufaktur Bandung. Akses cepat ke Akademik, Kepegawaian, Keuangan, Logistik, Panduan, dan LMS dalam satu platform.">
-    <!-- Link to external CSS -->
+    <meta name="description"
+        content="Aggregator layanan digital Politeknik Manufaktur Bandung. Akses cepat ke Akademik, Kepegawaian, Keuangan, Logistik, Panduan, dan LMS dalam satu platform.">
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
-    <!-- Geometric Background Decorators — inspired by Polman hexagon logo -->
+    <!-- Geometric Background Decorators -->
     <div class="geo-bg" aria-hidden="true">
         <div class="geo-hex geo-hex-1"></div>
         <div class="geo-hex geo-hex-2"></div>
         <div class="geo-hex geo-hex-3"></div>
         <div class="geo-hex geo-hex-4"></div>
+        <div class="geo-hex geo-hex-5"></div>
+        <div class="geo-hex geo-hex-6"></div>
+        <div class="geo-hex geo-hex-7"></div>
+        <div class="geo-hex geo-hex-8"></div>
     </div>
 
-    <!-- 1. Top Navigation -->
-    <nav class="navbar">
+    <!-- 1. Navbar -->
+    <nav class="navbar" id="mainNavbar">
         <div class="container nav-container">
             <div class="logo">
                 <a href="#home">
@@ -30,17 +35,16 @@
                 </a>
             </div>
             <div class="nav-links" id="navLinks">
-                <a href="#home">Beranda</a>
+                <a href="#home" class="active">Beranda</a>
                 <a href="#aplikasi">Aplikasi</a>
                 <a href="#berita">Berita</a>
                 <a href="#agenda">Agenda</a>
             </div>
             <div class="nav-actions">
                 <div class="search-bar">
-                    <input type="text" placeholder="Cari layanan...">
-                    <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+                    <button type="button" aria-label="Search"><i class="fas fa-search"></i></button>
+                    <input type="text" id="searchInput" placeholder="Cari layanan...">
                 </div>
-                <!-- Mobile Menu Button -->
                 <div class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -48,111 +52,178 @@
         </div>
     </nav>
 
-    <!-- 2. Header (Slider / Hero Section with Parallax) -->
+    <!-- 2. Hero Section -->
     <header class="hero" id="home">
-        <div class="hero-bg hero-bg-1"></div>
-        <div class="hero-bg hero-bg-2"></div>
-        <div class="hero-bg hero-bg-3"></div>
+        <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1>Satu Pintu Untuk Semua<br>Layanan Polman Bandung</h1>
-            <p>Platform digital terintegrasi yang menyatukan akses informasi dan layanan akademik serta administratif untuk seluruh civitas akademika.</p>
-            <a href="#aplikasi" class="btn btn-primary">Jelajahi Layanan &nbsp;<i class="fas fa-chevron-down"></i></a>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-hexagon"></i>
+                Portal Layanan Terpadu Polman Bandung
+            </div>
+            <h1>Satu Pintu Untuk Semua<br><span>Layanan Polman Bandung</span></h1>
+            <p>Platform digital terintegrasi yang menyatukan akses informasi dan layanan akademik serta administratif
+                untuk seluruh civitas akademika.</p>
+            <div class="hero-actions">
+                <a href="#aplikasi" class="btn-hero-primary">
+                    <i class="fas fa-th-large"></i> Jelajahi Layanan
+                </a>
+                <a href="https://polman-bandung.ac.id/" target="_blank" class="btn-hero-secondary">
+                    <i class="fas fa-external-link-alt"></i> Website Resmi
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll">
+            <i class="fas fa-chevron-down"></i>
+            <span>Scroll</span>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="hero-stats">
+            <div class="hero-stat-item">
+                <span>6+</span>
+                <p>Sistem Layanan</p>
+            </div>
+            <div class="hero-stat-item">
+                <span>3.000+</span>
+                <p>Civitas Akademika</p>
+            </div>
+            <div class="hero-stat-item">
+                <span>50+</span>
+                <p>Tahun Berdiri</p>
+            </div>
+            <div class="hero-stat-item">
+                <span>24/7</span>
+                <p>Akses Layanan</p>
+            </div>
         </div>
     </header>
 
-    <!-- 3. Link 6 Aplikasi -->
+    <!-- 3. Layanan Aplikasi -->
     <section class="section bg-white" id="aplikasi">
         <div class="container">
-            <div class="section-header">
-                <h2>Layanan Aplikasi Terintegrasi</h2>
-                <p>Akses cepat ke berbagai sistem informasi dan layanan digital kampus</p>
+            <div class="section-header reveal">
+                <div class="section-tag">Layanan Digital</div>
+                <h2>Aplikasi Terintegrasi</h2>
+                <p>Akses cepat ke berbagai sistem informasi dan layanan digital kampus dalam satu portal terpadu</p>
             </div>
-            
+
             <div class="apps-grid">
                 <!-- Aplikasi 1 -->
-                <a href="https://akasia.polman-bandung.ac.id/auth/login" target="_blank" class="app-card">
+                <a href="https://akasia.polman-bandung.ac.id/auth/login" target="_blank" class="app-card reveal">
                     <div class="app-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Akademik</h3>
-                    <p>Sistem Informasi Akademik (AKASIA) untuk dosen dan mahasiswa.</p>
+                    <div>
+                        <h3>Akademik</h3>
+                        <p>Sistem Informasi Akademik (AKASIA) untuk dosen dan mahasiswa.</p>
+                    </div>
+                    <div class="app-card-arrow">Buka <i class="fas fa-arrow-right"></i></div>
                 </a>
-                
+
                 <!-- Aplikasi 2 -->
-                <a href="https://kepegawaian.polman-bandung.ac.id/auth/login" target="_blank" class="app-card">
+                <a href="https://kepegawaian.polman-bandung.ac.id/auth/login" target="_blank" class="app-card reveal">
                     <div class="app-icon"><i class="fas fa-users"></i></div>
-                    <h3>Kepegawaian</h3>
-                    <p>Portal Sistem Informasi Kepegawaian Polman Bandung.</p>
+                    <div>
+                        <h3>Kepegawaian</h3>
+                        <p>Portal Sistem Informasi Kepegawaian Polman Bandung.</p>
+                    </div>
+                    <div class="app-card-arrow">Buka <i class="fas fa-arrow-right"></i></div>
                 </a>
-                
+
                 <!-- Aplikasi 3 -->
-                <a href="https://keuangan.polman-bandung.ac.id/tentang-baak/" target="_blank" class="app-card">
+                <a href="https://keuangan.polman-bandung.ac.id/tentang-baak/" target="_blank" class="app-card reveal">
                     <div class="app-icon"><i class="fas fa-wallet"></i></div>
-                    <h3>Keuangan</h3>
-                    <p>Layanan informasi dan sistem administrasi Keuangan.</p>
+                    <div>
+                        <h3>Keuangan</h3>
+                        <p>Layanan informasi dan sistem administrasi Keuangan.</p>
+                    </div>
+                    <div class="app-card-arrow">Buka <i class="fas fa-arrow-right"></i></div>
                 </a>
-                
+
                 <!-- Aplikasi 4 -->
-                <a href="https://logistik.polman-bandung.ac.id/auth/login" target="_blank" class="app-card">
+                <a href="https://logistik.polman-bandung.ac.id/auth/login" target="_blank" class="app-card reveal">
                     <div class="app-icon"><i class="fas fa-box-open"></i></div>
-                    <h3>Logistik</h3>
-                    <p>Sistem Manajemen Logistik dan Inventaris Kampus.</p>
+                    <div>
+                        <h3>Logistik</h3>
+                        <p>Sistem Manajemen Logistik dan Inventaris Kampus.</p>
+                    </div>
+                    <div class="app-card-arrow">Buka <i class="fas fa-arrow-right"></i></div>
                 </a>
-                
+
                 <!-- Aplikasi 5 -->
-                <a href="https://panduan.polman-bandung.ac.id/" target="_blank" class="app-card">
+                <a href="https://panduan.polman-bandung.ac.id/" target="_blank" class="app-card reveal">
                     <div class="app-icon"><i class="fas fa-book"></i></div>
-                    <h3>Panduan</h3>
-                    <p>Dokumentasi dan panduan penggunaan sistem informasi.</p>
+                    <div>
+                        <h3>Panduan</h3>
+                        <p>Dokumentasi dan panduan penggunaan sistem informasi.</p>
+                    </div>
+                    <div class="app-card-arrow">Buka <i class="fas fa-arrow-right"></i></div>
                 </a>
-                
+
                 <!-- Aplikasi 6 -->
-                <a href="https://belajar.polman-bandung.ac.id/" target="_blank" class="app-card">
+                <a href="https://belajar.polman-bandung.ac.id/" target="_blank" class="app-card reveal">
                     <div class="app-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>LMS Belajar</h3>
-                    <p>Learning Management System untuk pembelajaran daring.</p>
+                    <div>
+                        <h3>LMS Belajar</h3>
+                        <p>Learning Management System untuk pembelajaran daring.</p>
+                    </div>
+                    <div class="app-card-arrow">Buka <i class="fas fa-arrow-right"></i></div>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- 4. Berita Terbaru -->
-    <section class="section" style="background-color: var(--bg-light);" id="berita">
+    <section class="section bg-light" id="berita">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
+                <div class="section-tag">Informasi</div>
                 <h2>Berita Terbaru</h2>
                 <p>Kabar dan informasi terkini seputar Politeknik Manufaktur Bandung</p>
             </div>
-            
+
             <div class="news-grid">
                 <!-- Berita 1 -->
-                <div class="news-card">
-                    <img src="images/wisuda polman.jpg" alt="Wisuda Polman">
+                <div class="news-card reveal">
+                    <div class="news-img-wrap">
+                        <img src="images/wisuda polman.jpg" alt="Wisuda Polman" loading="lazy">
+                    </div>
                     <div class="news-content">
-                        <span class="news-date">10 Juni 2026</span>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> 10 Juni 2026</span>
                         <h3>Persiapan Wisuda Lulusan Polman Bandung Tahun 2026</h3>
-                        <p>Informasi lengkap terkait jadwal, persyaratan, dan pelaksanaan kegiatan wisuda tahun ajaran 2025/2026.</p>
+                        <p>Informasi lengkap terkait jadwal, persyaratan, dan pelaksanaan kegiatan wisuda tahun ajaran
+                            2025/2026.</p>
                         <a href="#" class="read-more">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
+
                 <!-- Berita 2 -->
-                <div class="news-card">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&q=80" alt="Inovasi Teknologi">
+                <div class="news-card reveal">
+                    <div class="news-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80"
+                            alt="Inovasi Teknologi" loading="lazy">
+                    </div>
                     <div class="news-content">
-                        <span class="news-date">05 Juni 2026</span>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> 05 Juni 2026</span>
                         <h3>Inovasi Teknologi Mahasiswa Polman di Pameran Nasional</h3>
                         <p>Mahasiswa program studi Teknik Otomasi Manufaktur berhasil meraih penghargaan bergengsi.</p>
                         <a href="#" class="read-more">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
+
                 <!-- Berita 3 -->
-                <div class="news-card">
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=500&q=80" alt="Kerjasama Industri">
+                <div class="news-card reveal">
+                    <div class="news-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80"
+                            alt="Kerjasama Industri" loading="lazy">
+                    </div>
                     <div class="news-content">
-                        <span class="news-date">01 Juni 2026</span>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> 01 Juni 2026</span>
                         <h3>Penandatanganan MoU dengan Perusahaan Manufaktur Global</h3>
-                        <p>Langkah strategis Polman Bandung dalam memperluas jaringan kerjasama industri untuk mahasiswa.</p>
+                        <p>Langkah strategis Polman Bandung dalam memperluas jaringan kerjasama industri untuk
+                            mahasiswa.</p>
                         <a href="#" class="read-more">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -160,39 +231,44 @@
         </div>
     </section>
 
-    <!-- 5. Agenda Calendar -->
+    <!-- 5. Agenda Kalender -->
     <section class="section bg-white" id="agenda">
         <div class="container">
-            <div class="section-header">
-                <h2>Agenda Kalender</h2>
+            <div class="section-header reveal">
+                <div class="section-tag">Kalender</div>
+                <h2>Agenda Akademik</h2>
                 <p>Jadwal penting kegiatan akademik dan non-akademik ke depan</p>
             </div>
-            
+
             <div class="agenda-layout">
-                <!-- Left: Calendar Widget -->
-                <div class="calendar-widget">
+                <!-- Kalender -->
+                <div class="calendar-widget reveal">
                     <div class="calendar-header">
-                        <button id="prevMonth" aria-label="Previous Month"><i class="fas fa-chevron-left"></i></button>
+                        <button id="prevMonth" aria-label="Bulan Sebelumnya"><i
+                                class="fas fa-chevron-left"></i></button>
                         <h3 id="monthYear">Juni 2026</h3>
-                        <button id="nextMonth" aria-label="Next Month"><i class="fas fa-chevron-right"></i></button>
+                        <button id="nextMonth" aria-label="Bulan Selanjutnya"><i
+                                class="fas fa-chevron-right"></i></button>
                     </div>
                     <div class="calendar-weekdays">
-                        <div>Min</div><div>Sen</div><div>Sel</div><div>Rab</div><div>Kam</div><div>Jum</div><div>Sab</div>
+                        <div>Min</div>
+                        <div>Sen</div>
+                        <div>Sel</div>
+                        <div>Rab</div>
+                        <div>Kam</div>
+                        <div>Jum</div>
+                        <div>Sab</div>
                     </div>
-                    <div class="calendar-days" id="calendarDays">
-                        <!-- Javascript will populate days here -->
-                    </div>
+                    <div class="calendar-days" id="calendarDays"></div>
                 </div>
-                
-                <!-- Right: Agenda List -->
-                <div class="agenda-container" id="agendaList">
-                    <!-- Javascript will populate agenda items here -->
-                </div>
+
+                <!-- Agenda List -->
+                <div class="agenda-container" id="agendaList"></div>
             </div>
         </div>
     </section>
 
-    <!-- 6. Footer & Button Link Tiket Bantuan -->
+    <!-- 6. Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
@@ -200,20 +276,24 @@
                     <h2><img src="images/Logo_Polman_Bandung.png" alt="Logo Polman" class="footer-logo"> POLMAN</h2>
                     <p class="institution-name">Politeknik Manufaktur Bandung</p>
                     <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> Jl. Kanayakan no. 21, Dago, Coblong, Kota Bandung, Jawa Barat 40135</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Kanayakan no. 21, Dago, Coblong, Kota Bandung,
+                            Jawa Barat 40135</li>
                         <li><i class="fas fa-envelope"></i> sekretariat@polman-bandung.ac.id</li>
                         <li><i class="fas fa-phone-alt"></i> (022) 2500241</li>
                     </ul>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/polman_bandung/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/polman.bandung" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/c/POLMANOFFICIAL" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/polman_bandung/" target="_blank" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/polman.bandung" target="_blank" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/c/POLMANOFFICIAL" target="_blank" aria-label="YouTube"><i
+                                class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="help-section">
                     <h3>Pusat Bantuan Layanan</h3>
-                    <p>Mengalami kendala saat mengakses aplikasi atau butuh informasi lebih lanjut mengenai layanan IT kami?</p>
-                    <!-- Button link tiket bantuan -->
+                    <p>Mengalami kendala saat mengakses aplikasi atau butuh informasi lebih lanjut mengenai layanan IT
+                        kami?</p>
                     <a href="https://bantuan.polman-bandung.ac.id/" target="_blank" class="btn btn-warning">
                         <i class="fas fa-ticket-alt"></i> Buat Tiket Bantuan
                     </a>
@@ -225,21 +305,19 @@
         </div>
     </footer>
 
-    <!-- Interactive Scripts -->
+    <!-- Scripts -->
     <script>
-        // --- Agenda Calendar Logic ---
+        // ── Calendar & Agenda ──────────────────────────────
         const events = [
             { date: '2026-06-15', endDate: '2026-06-26', title: 'Ujian Akhir Semester Genap', location: 'Kampus Polman Bandung', icon: 'fa-calendar-alt', isRange: true },
             { date: '2026-07-20', title: 'Batas Akhir Input Nilai Akademik', location: 'Sistem AKASIA', icon: 'fa-laptop', isRange: false },
             { date: '2026-08-10', title: 'Penerimaan Mahasiswa Baru Gelombang 2', location: 'Portal PMB Polman', icon: 'fa-globe', isRange: false }
         ];
-
         const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
         const monthYearDisplay = document.getElementById('monthYear');
         const calendarDays = document.getElementById('calendarDays');
         const agendaList = document.getElementById('agendaList');
-
-        let currentDate = new Date(2026, 5, 1); // Start at June 2026 to match dummy data
+        let currentDate = new Date(2026, 5, 1);
         let selectedDateStr = null;
 
         function renderCalendar() {
@@ -247,112 +325,101 @@
             const month = currentDate.getMonth();
             const year = currentDate.getFullYear();
             monthYearDisplay.textContent = `${monthNames[month]} ${year}`;
-
             const firstDay = new Date(year, month, 1).getDay();
             const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-            // Padding empty days
             for (let i = 0; i < firstDay; i++) {
-                const emptyDiv = document.createElement('div');
-                emptyDiv.classList.add('empty');
-                calendarDays.appendChild(emptyDiv);
+                const el = document.createElement('div');
+                el.classList.add('empty');
+                calendarDays.appendChild(el);
             }
-
-            // Days
             for (let i = 1; i <= daysInMonth; i++) {
-                const dayDiv = document.createElement('div');
-                dayDiv.textContent = i;
-                
+                const el = document.createElement('div');
+                el.textContent = i;
                 const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
                 const hasEvent = events.some(e => e.date === dateStr || (e.isRange && dateStr >= e.date && dateStr <= e.endDate));
-                
-                if (hasEvent) {
-                    dayDiv.classList.add('has-event');
-                }
-
-                if (dateStr === selectedDateStr) {
-                    dayDiv.classList.add('selected');
-                }
-
-                dayDiv.addEventListener('click', () => {
-                    selectedDateStr = dateStr;
-                    renderCalendar();
-                    renderAgenda(dateStr);
-                });
-
-                calendarDays.appendChild(dayDiv);
+                if (hasEvent) el.classList.add('has-event');
+                if (dateStr === selectedDateStr) el.classList.add('selected');
+                el.addEventListener('click', () => { selectedDateStr = dateStr; renderCalendar(); renderAgenda(dateStr); });
+                calendarDays.appendChild(el);
             }
         }
 
         function renderAgenda(filterDate = null) {
             agendaList.innerHTML = '';
-            
-            let filteredEvents = events;
-            if (filterDate) {
-                filteredEvents = events.filter(e => e.date === filterDate || (e.isRange && filterDate >= e.date && filterDate <= e.endDate));
-            }
-
-            if (filteredEvents.length === 0) {
-                agendaList.innerHTML = '<p style="color:#82878d; text-align:center; padding: 20px;">Tidak ada agenda pada tanggal ini.</p>';
+            let filtered = filterDate ? events.filter(e => e.date === filterDate || (e.isRange && filterDate >= e.date && filterDate <= e.endDate)) : events;
+            if (filtered.length === 0) {
+                agendaList.innerHTML = '<p style="color:#64748b;text-align:center;padding:40px 20px;font-size:0.9rem;">Tidak ada agenda pada tanggal ini.</p>';
                 return;
             }
-
-            filteredEvents.forEach(e => {
+            filtered.forEach(e => {
                 const d = new Date(e.date);
                 const day = String(d.getDate()).padStart(2, '0');
-                const monthName = monthNames[d.getMonth()].substring(0, 3).toUpperCase();
-
-                let dateInfo = e.isRange ? `${e.date.split('-')[2]} - ${e.endDate.split('-')[2]} ${monthNames[new Date(e.endDate).getMonth()]} ${new Date(e.endDate).getFullYear()}` : `${day} ${monthNames[d.getMonth()]} ${d.getFullYear()}`;
-
-                const html = `
+                const mon = monthNames[d.getMonth()].substring(0, 3).toUpperCase();
+                const dateInfo = e.isRange
+                    ? `${e.date.split('-')[2]} – ${e.endDate.split('-')[2]} ${monthNames[new Date(e.endDate).getMonth()]} ${new Date(e.endDate).getFullYear()}`
+                    : `${day} ${monthNames[d.getMonth()]} ${d.getFullYear()}`;
+                agendaList.innerHTML += `
                     <div class="agenda-item">
-                        <div class="agenda-date">
-                            <span class="day">${day}</span>
-                            <span class="month">${monthName}</span>
-                        </div>
+                        <div class="agenda-date"><span class="day">${day}</span><span class="month">${mon}</span></div>
                         <div class="agenda-info">
                             <h3>${e.title}</h3>
-                            <p><i class="fas ${e.icon}"></i> ${dateInfo} &nbsp; | &nbsp; <i class="fas ${e.icon === 'fa-laptop' ? 'fa-laptop' : (e.icon === 'fa-globe' ? 'fa-globe' : 'fa-map-marker-alt')}"></i> ${e.location}</p>
+                            <p><i class="fas fa-calendar-days"></i> ${dateInfo} &nbsp;|&nbsp; <i class="fas fa-map-marker-alt"></i> ${e.location}</p>
                         </div>
-                    </div>
-                `;
-                agendaList.innerHTML += html;
+                    </div>`;
             });
         }
 
-        document.getElementById('prevMonth').addEventListener('click', () => {
-            currentDate.setMonth(currentDate.getMonth() - 1);
-            renderCalendar();
-        });
-
-        document.getElementById('nextMonth').addEventListener('click', () => {
-            currentDate.setMonth(currentDate.getMonth() + 1);
-            renderCalendar();
-        });
-
-        // Initial Render
+        document.getElementById('prevMonth').addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() - 1); renderCalendar(); });
+        document.getElementById('nextMonth').addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() + 1); renderCalendar(); });
         renderCalendar();
-        renderAgenda(); // Show all initially
+        renderAgenda();
 
-        // Mobile Navigation Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        // ── Mobile Menu ──────────────────────────────
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
         });
 
-        // Sticky Navbar Effect on Scroll
+        // ── Navbar Scroll Effect ──────────────────────────────
+        const navbar = document.getElementById('mainNavbar');
         window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-                navbar.style.padding = '10px 0';
-            } else {
-                navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-                navbar.style.padding = '15px 0';
-            }
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // ── Active Nav Link on Scroll ──────────────────────────────
+        const sections = document.querySelectorAll('section[id], header[id]');
+        const navLinkEls = document.querySelectorAll('.nav-links a');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinkEls.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+                }
+            });
+        }, { threshold: 0.45 });
+        sections.forEach(s => observer.observe(s));
+
+        // ── Scroll Reveal ──────────────────────────────
+        const revealEls = document.querySelectorAll('.reveal');
+        const revealObs = new IntersectionObserver(entries => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                    revealObs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => revealObs.observe(el));
+
+        // ── Search Filter ──────────────────────────────
+        document.getElementById('searchInput').addEventListener('keyup', function (e) {
+            const filter = e.target.value.toLowerCase().trim();
+            document.querySelectorAll('.app-card').forEach(card => {
+                const match = card.querySelector('h3').textContent.toLowerCase().includes(filter) ||
+                    card.querySelector('p').textContent.toLowerCase().includes(filter);
+                card.style.display = (filter === '' || match) ? 'flex' : 'none';
+            });
+            if (e.key === 'Enter') document.getElementById('aplikasi').scrollIntoView({ behavior: 'smooth' });
         });
     </script>
 </body>
+
 </html>
