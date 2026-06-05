@@ -25,64 +25,202 @@
         <div class="geo-hex geo-hex-8"></div>
     </div>
 
-    <!-- 1. Navbar -->
-    <nav class="navbar" id="mainNavbar">
+    <!-- ══════════════════════════════════════════
+         1. TOP NAVIGATION
+    ══════════════════════════════════════════ -->
+    <nav class="navbar" id="mainNavbar" role="navigation" aria-label="Navigasi Utama">
         <div class="container nav-container">
+
+            <!-- Logo -->
             <div class="logo">
-                <a href="#home">
+                <a href="#home" aria-label="Polman Bandung - Beranda">
                     <img src="images/Logo_Polman_Bandung.png" alt="Logo Polman Bandung" class="logo-img">
-                    POLMAN
+                    <span class="logo-text">POLMAN <span class="logo-sub">Bandung</span></span>
                 </a>
             </div>
-            <div class="nav-links" id="navLinks">
-                <a href="#home" class="active">Beranda</a>
-                <a href="#aplikasi">Aplikasi</a>
-                <a href="#berita">Berita</a>
-                <a href="#agenda">Agenda</a>
+
+            <!-- Navigation Links -->
+            <div class="nav-links" id="navLinks" role="menubar">
+                <a href="#home" class="active" role="menuitem">
+                    <i class="fas fa-home nav-icon"></i> Beranda
+                </a>
+                <a href="#aplikasi" role="menuitem">
+                    <i class="fas fa-th-large nav-icon"></i> Aplikasi
+                </a>
+                <a href="#berita" role="menuitem">
+                    <i class="fas fa-newspaper nav-icon"></i> Berita
+                </a>
+                <a href="#agenda" role="menuitem">
+                    <i class="fas fa-calendar nav-icon"></i> Agenda
+                </a>
             </div>
+
+            <!-- Nav Actions -->
             <div class="nav-actions">
-                <div class="search-bar">
-                    <button type="button" aria-label="Search"><i class="fas fa-search"></i></button>
-                    <input type="text" id="searchInput" placeholder="Cari layanan...">
+                <div class="search-bar" id="searchBarWrap">
+                    <button type="button" aria-label="Cari" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input type="text" id="searchInput" placeholder="Cari layanan..." autocomplete="off">
                 </div>
-                <div class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </div>
+
+                <!-- CTA Button -->
+                <a href="https://bantuan.polman-bandung.ac.id/" target="_blank" class="nav-cta" aria-label="Bantuan">
+                    <i class="fas fa-headset"></i>
+                    <span>Bantuan</span>
+                </a>
+
+                <!-- Mobile Toggle -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="hamburger">
+                        <span></span><span></span><span></span>
+                    </span>
+                </button>
             </div>
         </div>
+
+        <!-- Progress bar -->
+        <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
     </nav>
 
-    <!-- 2. Hero Section -->
-    <header class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
+    <!-- ══════════════════════════════════════════
+         2. HERO SLIDER + PARALLAX
+    ══════════════════════════════════════════ -->
+    <header class="hero-slider-wrapper" id="home" aria-label="Banner Utama">
 
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-hexagon"></i>
-                Portal Layanan Terpadu Polman Bandung
+        <!-- ── Slider Track ── -->
+        <div class="slider-track" id="sliderTrack" role="region" aria-label="Image Slider">
+
+            <!-- Slide 1 -->
+            <div class="slide active" data-index="0">
+                <div class="slide-parallax-bg parallax-layer"
+                    style="background-image: url('images/foto 1.jpg');"
+                    data-speed="0.4" aria-hidden="true"></div>
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <div class="hero-badge animate-in">
+                        <i class="fas fa-star"></i>
+                        Portal Layanan Terpadu Polman Bandung
+                    </div>
+                    <h1 class="animate-in" style="animation-delay:.15s">
+                        Satu Pintu Untuk Semua<br>
+                        <span class="text-gradient">Layanan Polman Bandung</span>
+                    </h1>
+                    <p class="animate-in" style="animation-delay:.3s">
+                        Platform digital terintegrasi yang menyatukan akses informasi dan layanan akademik
+                        serta administratif untuk seluruh civitas akademika.
+                    </p>
+                    <div class="hero-actions animate-in" style="animation-delay:.45s">
+                        <a href="#aplikasi" class="btn-hero-primary">
+                            <i class="fas fa-th-large"></i> Jelajahi Layanan
+                        </a>
+                        <a href="https://polman-bandung.ac.id/" target="_blank" class="btn-hero-secondary">
+                            <i class="fas fa-external-link-alt"></i> Website Resmi
+                        </a>
+                    </div>
+                </div>
             </div>
-            <h1>Satu Pintu Untuk Semua<br><span>Layanan Polman Bandung</span></h1>
-            <p>Platform digital terintegrasi yang menyatukan akses informasi dan layanan akademik serta administratif
-                untuk seluruh civitas akademika.</p>
-            <div class="hero-actions">
-                <a href="#aplikasi" class="btn-hero-primary">
-                    <i class="fas fa-th-large"></i> Jelajahi Layanan
-                </a>
-                <a href="https://polman-bandung.ac.id/" target="_blank" class="btn-hero-secondary">
-                    <i class="fas fa-external-link-alt"></i> Website Resmi
-                </a>
+
+            <!-- Slide 2 -->
+            <div class="slide" data-index="1">
+                <div class="slide-parallax-bg parallax-layer"
+                    style="background-image: url('images/foto 2.jpg');"
+                    data-speed="0.35" aria-hidden="true"></div>
+                <div class="slide-overlay slide-overlay-warm"></div>
+                <div class="slide-content">
+                    <div class="hero-badge animate-in">
+                        <i class="fas fa-graduation-cap"></i>
+                        Akademik Unggulan
+                    </div>
+                    <h1 class="animate-in" style="animation-delay:.15s">
+                        Cetak Generasi<br>
+                        <span class="text-gradient">Manufaktur Terbaik</span>
+                    </h1>
+                    <p class="animate-in" style="animation-delay:.3s">
+                        Politeknik Manufaktur Bandung berdiri sejak 1976, menghasilkan lulusan
+                        profesional teknik manufaktur yang siap bersaing di industri global.
+                    </p>
+                    <div class="hero-actions animate-in" style="animation-delay:.45s">
+                        <a href="https://akasia.polman-bandung.ac.id/auth/login" target="_blank"
+                            class="btn-hero-primary">
+                            <i class="fas fa-graduation-cap"></i> Sistem Akademik
+                        </a>
+                        <a href="#berita" class="btn-hero-secondary">
+                            <i class="fas fa-newspaper"></i> Berita Terkini
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide" data-index="2">
+                <div class="slide-parallax-bg parallax-layer"
+                    style="background-image: url('images/foto 3.jpg');"
+                    data-speed="0.45" aria-hidden="true"></div>
+                <div class="slide-overlay slide-overlay-deep"></div>
+                <div class="slide-content">
+                    <div class="hero-badge animate-in">
+                        <i class="fas fa-industry"></i>
+                        Kerjasama Industri
+                    </div>
+                    <h1 class="animate-in" style="animation-delay:.15s">
+                        Inovasi Teknologi<br>
+                        <span class="text-gradient">Untuk Masa Depan</span>
+                    </h1>
+                    <p class="animate-in" style="animation-delay:.3s">
+                        Kolaborasi erat dengan ratusan perusahaan manufaktur nasional dan internasional
+                        untuk menjamin relevansi kurikulum dan peluang karir lulusan.
+                    </p>
+                    <div class="hero-actions animate-in" style="animation-delay:.45s">
+                        <a href="#agenda" class="btn-hero-primary">
+                            <i class="fas fa-calendar-alt"></i> Agenda Kampus
+                        </a>
+                        <a href="https://belajar.polman-bandung.ac.id/" target="_blank" class="btn-hero-secondary">
+                            <i class="fas fa-laptop-code"></i> Portal Belajar
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
-        <div class="hero-scroll">
-            <i class="fas fa-chevron-down"></i>
+        <!-- ── Slider Controls ── -->
+        <button class="slider-arrow slider-prev" id="sliderPrev" aria-label="Slide sebelumnya">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-arrow slider-next" id="sliderNext" aria-label="Slide berikutnya">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- ── Dot Indicators ── -->
+        <div class="slider-dots" id="sliderDots" role="tablist" aria-label="Slide Navigator">
+            <button class="slider-dot active" data-slide="0" role="tab" aria-selected="true"
+                aria-label="Slide 1"></button>
+            <button class="slider-dot" data-slide="1" role="tab" aria-selected="false"
+                aria-label="Slide 2"></button>
+            <button class="slider-dot" data-slide="2" role="tab" aria-selected="false"
+                aria-label="Slide 3"></button>
+        </div>
+
+        <!-- ── Slide Counter ── -->
+        <div class="slider-counter" aria-hidden="true">
+            <span id="currentSlide">01</span> / <span id="totalSlides">03</span>
+        </div>
+
+        <!-- ── Auto-play Progress Bar ── -->
+        <div class="slider-timer" aria-hidden="true">
+            <div class="slider-timer-bar" id="sliderTimerBar"></div>
+        </div>
+
+        <!-- ── Scroll Down Indicator ── -->
+        <div class="hero-scroll" aria-label="Gulir ke bawah">
+            <div class="mouse-scroll">
+                <div class="mouse-wheel"></div>
+            </div>
             <span>Scroll</span>
         </div>
 
-        <!-- Stats Bar -->
-        <div class="hero-stats">
+        <!-- ── Stats Bar ── -->
+        <div class="hero-stats" aria-label="Statistik Polman Bandung">
             <div class="hero-stat-item">
                 <span>6+</span>
                 <p>Sistem Layanan</p>
@@ -92,7 +230,7 @@
                 <p>Civitas Akademika</p>
             </div>
             <div class="hero-stat-item">
-                <span>50+</span>
+                <span>1976</span>
                 <p>Tahun Berdiri</p>
             </div>
             <div class="hero-stat-item">
@@ -102,7 +240,22 @@
         </div>
     </header>
 
-    <!-- 3. Layanan Aplikasi -->
+    <!-- ══════════════════════════════════════════
+         3. PARALLAX DIVIDER SECTION
+    ══════════════════════════════════════════ -->
+    <div class="parallax-banner" aria-hidden="true">
+        <div class="parallax-banner-bg" data-speed="0.3"></div>
+        <div class="parallax-banner-overlay"></div>
+        <div class="parallax-banner-content">
+            <span><i class="fas fa-star"></i></span>
+            <p>Politeknik Manufaktur Bandung — Berdiri Sejak 1976</p>
+            <span><i class="fas fa-star"></i></span>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         4. Layanan Aplikasi
+    ══════════════════════════════════════════ -->
     <section class="section bg-white" id="aplikasi">
         <div class="container">
             <div class="section-header reveal">
@@ -113,7 +266,8 @@
 
             <div class="apps-grid">
                 <!-- Aplikasi 1 -->
-                <a href="https://akasia.polman-bandung.ac.id/auth/login" target="_blank" class="app-card reveal">
+                <a href="https://akasia.polman-bandung.ac.id/auth/login" target="_blank" class="app-card reveal"
+                    id="app-akademik">
                     <div class="app-icon"><i class="fas fa-graduation-cap"></i></div>
                     <div>
                         <h3>Akademik</h3>
@@ -123,7 +277,8 @@
                 </a>
 
                 <!-- Aplikasi 2 -->
-                <a href="https://kepegawaian.polman-bandung.ac.id/auth/login" target="_blank" class="app-card reveal">
+                <a href="https://kepegawaian.polman-bandung.ac.id/auth/login" target="_blank" class="app-card reveal"
+                    id="app-kepegawaian">
                     <div class="app-icon"><i class="fas fa-users"></i></div>
                     <div>
                         <h3>Kepegawaian</h3>
@@ -133,7 +288,8 @@
                 </a>
 
                 <!-- Aplikasi 3 -->
-                <a href="https://keuangan.polman-bandung.ac.id/tentang-baak/" target="_blank" class="app-card reveal">
+                <a href="https://keuangan.polman-bandung.ac.id/tentang-baak/" target="_blank" class="app-card reveal"
+                    id="app-keuangan">
                     <div class="app-icon"><i class="fas fa-wallet"></i></div>
                     <div>
                         <h3>Keuangan</h3>
@@ -143,7 +299,8 @@
                 </a>
 
                 <!-- Aplikasi 4 -->
-                <a href="https://logistik.polman-bandung.ac.id/auth/login" target="_blank" class="app-card reveal">
+                <a href="https://logistik.polman-bandung.ac.id/auth/login" target="_blank" class="app-card reveal"
+                    id="app-logistik">
                     <div class="app-icon"><i class="fas fa-box-open"></i></div>
                     <div>
                         <h3>Logistik</h3>
@@ -153,7 +310,8 @@
                 </a>
 
                 <!-- Aplikasi 5 -->
-                <a href="https://panduan.polman-bandung.ac.id/" target="_blank" class="app-card reveal">
+                <a href="https://panduan.polman-bandung.ac.id/" target="_blank" class="app-card reveal"
+                    id="app-panduan">
                     <div class="app-icon"><i class="fas fa-book"></i></div>
                     <div>
                         <h3>Panduan</h3>
@@ -163,7 +321,8 @@
                 </a>
 
                 <!-- Aplikasi 6 -->
-                <a href="https://belajar.polman-bandung.ac.id/" target="_blank" class="app-card reveal">
+                <a href="https://belajar.polman-bandung.ac.id/" target="_blank" class="app-card reveal"
+                    id="app-lms">
                     <div class="app-icon"><i class="fas fa-laptop-code"></i></div>
                     <div>
                         <h3>LMS Belajar</h3>
@@ -175,7 +334,9 @@
         </div>
     </section>
 
-    <!-- 4. Berita Terbaru -->
+    <!-- ══════════════════════════════════════════
+         5. Berita Terbaru
+    ══════════════════════════════════════════ -->
     <section class="section bg-light" id="berita">
         <div class="container">
             <div class="section-header reveal">
@@ -186,7 +347,7 @@
 
             <div class="news-grid">
                 <!-- Berita 1 -->
-                <div class="news-card reveal">
+                <div class="news-card reveal" id="news-wisuda">
                     <div class="news-img-wrap">
                         <img src="images/wisuda polman.jpg" alt="Wisuda Polman" loading="lazy">
                     </div>
@@ -200,7 +361,7 @@
                 </div>
 
                 <!-- Berita 2 -->
-                <div class="news-card reveal">
+                <div class="news-card reveal" id="news-inovasi">
                     <div class="news-img-wrap">
                         <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80"
                             alt="Inovasi Teknologi" loading="lazy">
@@ -214,7 +375,7 @@
                 </div>
 
                 <!-- Berita 3 -->
-                <div class="news-card reveal">
+                <div class="news-card reveal" id="news-mou">
                     <div class="news-img-wrap">
                         <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80"
                             alt="Kerjasama Industri" loading="lazy">
@@ -231,7 +392,9 @@
         </div>
     </section>
 
-    <!-- 5. Agenda Kalender -->
+    <!-- ══════════════════════════════════════════
+         6. Agenda Kalender
+    ══════════════════════════════════════════ -->
     <section class="section bg-white" id="agenda">
         <div class="container">
             <div class="section-header reveal">
@@ -244,20 +407,13 @@
                 <!-- Kalender -->
                 <div class="calendar-widget reveal">
                     <div class="calendar-header">
-                        <button id="prevMonth" aria-label="Bulan Sebelumnya"><i
-                                class="fas fa-chevron-left"></i></button>
+                        <button id="prevMonth" aria-label="Bulan Sebelumnya"><i class="fas fa-chevron-left"></i></button>
                         <h3 id="monthYear">Juni 2026</h3>
-                        <button id="nextMonth" aria-label="Bulan Selanjutnya"><i
-                                class="fas fa-chevron-right"></i></button>
+                        <button id="nextMonth" aria-label="Bulan Selanjutnya"><i class="fas fa-chevron-right"></i></button>
                     </div>
                     <div class="calendar-weekdays">
-                        <div>Min</div>
-                        <div>Sen</div>
-                        <div>Sel</div>
-                        <div>Rab</div>
-                        <div>Kam</div>
-                        <div>Jum</div>
-                        <div>Sab</div>
+                        <div>Min</div><div>Sen</div><div>Sel</div><div>Rab</div>
+                        <div>Kam</div><div>Jum</div><div>Sab</div>
                     </div>
                     <div class="calendar-days" id="calendarDays"></div>
                 </div>
@@ -268,7 +424,9 @@
         </div>
     </section>
 
-    <!-- 6. Footer -->
+    <!-- ══════════════════════════════════════════
+         7. Footer
+    ══════════════════════════════════════════ -->
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
@@ -282,12 +440,12 @@
                         <li><i class="fas fa-phone-alt"></i> (022) 2500241</li>
                     </ul>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/polman_bandung/" target="_blank" aria-label="Instagram"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/polman.bandung" target="_blank" aria-label="Facebook"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/c/POLMANOFFICIAL" target="_blank" aria-label="YouTube"><i
-                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/polman_bandung/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/polman.bandung" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/c/POLMANOFFICIAL" target="_blank" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="help-section">
@@ -305,9 +463,175 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- ══════════════════════════════════════════
+         SCRIPTS
+    ══════════════════════════════════════════ -->
     <script>
-        // ── Calendar & Agenda ──────────────────────────────
+        /* ══════════════════════════════════════
+           HERO SLIDER + PARALLAX
+        ══════════════════════════════════════ */
+        (function () {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            const currentSlideEl = document.getElementById('currentSlide');
+            const timerBar = document.getElementById('sliderTimerBar');
+            const AUTOPLAY_DELAY = 5500;
+
+            let current = 0;
+            let autoTimer = null;
+            let timerAnimation = null;
+            let isPaused = false;
+
+            function pad(n) { return String(n + 1).padStart(2, '0'); }
+
+            function goToSlide(idx, dir = 'next') {
+                if (idx === current) return;
+                const prev = current;
+                slides[prev].classList.remove('active');
+                slides[prev].classList.add(dir === 'next' ? 'exit-left' : 'exit-right');
+                slides[idx].classList.remove('exit-left', 'exit-right');
+                slides[idx].classList.add('active', dir === 'next' ? 'enter-right' : 'enter-left');
+
+                // Reset animations on new slide content
+                slides[idx].querySelectorAll('.animate-in').forEach(el => {
+                    el.style.animation = 'none';
+                    el.offsetHeight; // reflow
+                    el.style.animation = '';
+                });
+
+                setTimeout(() => {
+                    slides[prev].classList.remove('exit-left', 'exit-right');
+                    slides[idx].classList.remove('enter-right', 'enter-left');
+                }, 800);
+
+                // Dots
+                dots[current].classList.remove('active');
+                dots[current].setAttribute('aria-selected', 'false');
+                dots[idx].classList.add('active');
+                dots[idx].setAttribute('aria-selected', 'true');
+
+                current = idx;
+                currentSlideEl.textContent = pad(current);
+                resetTimer();
+            }
+
+            function nextSlide() {
+                const next = (current + 1) % slides.length;
+                goToSlide(next, 'next');
+            }
+
+            function prevSlide() {
+                const prev = (current - 1 + slides.length) % slides.length;
+                goToSlide(prev, 'prev');
+            }
+
+            function resetTimer() {
+                if (timerAnimation) timerAnimation.cancel();
+                timerBar.style.width = '0%';
+                timerBar.style.transition = 'none';
+                void timerBar.offsetWidth;
+                timerBar.style.transition = `width ${AUTOPLAY_DELAY}ms linear`;
+                timerBar.style.width = '100%';
+            }
+
+            function startAutoplay() {
+                stopAutoplay();
+                autoTimer = setInterval(nextSlide, AUTOPLAY_DELAY);
+                resetTimer();
+            }
+
+            function stopAutoplay() {
+                clearInterval(autoTimer);
+                timerBar.style.transition = 'none';
+            }
+
+            // Controls
+            document.getElementById('sliderNext').addEventListener('click', () => {
+                nextSlide();
+                startAutoplay();
+            });
+            document.getElementById('sliderPrev').addEventListener('click', () => {
+                prevSlide();
+                startAutoplay();
+            });
+
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(i, i > current ? 'next' : 'prev');
+                    startAutoplay();
+                });
+            });
+
+            // Pause on hover
+            const wrapper = document.querySelector('.hero-slider-wrapper');
+            wrapper.addEventListener('mouseenter', () => { stopAutoplay(); isPaused = true; });
+            wrapper.addEventListener('mouseleave', () => { isPaused = false; startAutoplay(); });
+
+            // Keyboard support
+            document.addEventListener('keydown', e => {
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'ArrowLeft') prevSlide();
+            });
+
+            // Touch / Swipe
+            let touchStart = 0;
+            wrapper.addEventListener('touchstart', e => { touchStart = e.touches[0].clientX; }, { passive: true });
+            wrapper.addEventListener('touchend', e => {
+                const diff = touchStart - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) {
+                    diff > 0 ? nextSlide() : prevSlide();
+                    startAutoplay();
+                }
+            });
+
+            startAutoplay();
+        })();
+
+        /* ══════════════════════════════════════
+           PARALLAX SCROLLING
+        ══════════════════════════════════════ */
+        (function () {
+            const parallaxBg = document.querySelector('.parallax-banner-bg');
+            const slidePBGs = document.querySelectorAll('.slide-parallax-bg');
+
+            function updateParallax() {
+                const scrollY = window.scrollY;
+
+                // Slide parallax backgrounds — only active when in view
+                slidePBGs.forEach(el => {
+                    const speed = parseFloat(el.dataset.speed) || 0.3;
+                    el.style.transform = `translateY(${scrollY * speed}px) scale(1.08)`;
+                });
+
+                // Banner parallax
+                if (parallaxBg) {
+                    const bannerRect = parallaxBg.closest('.parallax-banner').getBoundingClientRect();
+                    if (bannerRect.top < window.innerHeight && bannerRect.bottom > 0) {
+                        const speed = parseFloat(parallaxBg.dataset.speed) || 0.3;
+                        const offset = (window.innerHeight - bannerRect.top) * speed;
+                        parallaxBg.style.transform = `translateY(${offset * -0.4}px) scale(1.15)`;
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', updateParallax, { passive: true });
+            updateParallax();
+        })();
+
+        /* ══════════════════════════════════════
+           SCROLL PROGRESS BAR
+        ══════════════════════════════════════ */
+        (function () {
+            const bar = document.getElementById('scrollProgress');
+            window.addEventListener('scroll', () => {
+                const total = document.documentElement.scrollHeight - window.innerHeight;
+                bar.style.width = (window.scrollY / total * 100) + '%';
+            }, { passive: true });
+        })();
+
+        /* ══════════════════════════════════════
+           CALENDAR & AGENDA
+        ══════════════════════════════════════ */
         const events = [
             { date: '2026-06-15', endDate: '2026-06-26', title: 'Ujian Akhir Semester Genap', location: 'Kampus Polman Bandung', icon: 'fa-calendar-alt', isRange: true },
             { date: '2026-07-20', title: 'Batas Akhir Input Nilai Akademik', location: 'Sistem AKASIA', icon: 'fa-laptop', isRange: false },
@@ -374,18 +698,37 @@
         renderCalendar();
         renderAgenda();
 
-        // ── Mobile Menu ──────────────────────────────
-        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-            document.getElementById('navLinks').classList.toggle('active');
+        /* ══════════════════════════════════════
+           MOBILE MENU
+        ══════════════════════════════════════ */
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileBtn.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('active');
+            mobileBtn.setAttribute('aria-expanded', isOpen);
+            mobileBtn.querySelector('.hamburger').classList.toggle('open', isOpen);
         });
 
-        // ── Navbar Scroll Effect ──────────────────────────────
+        // Close menu on link click
+        navLinks.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileBtn.setAttribute('aria-expanded', 'false');
+                mobileBtn.querySelector('.hamburger').classList.remove('open');
+            });
+        });
+
+        /* ══════════════════════════════════════
+           NAVBAR SCROLL EFFECT
+        ══════════════════════════════════════ */
         const navbar = document.getElementById('mainNavbar');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 60);
-        });
+        }, { passive: true });
 
-        // ── Active Nav Link on Scroll ──────────────────────────────
+        /* ══════════════════════════════════════
+           ACTIVE NAV LINK ON SCROLL
+        ══════════════════════════════════════ */
         const sections = document.querySelectorAll('section[id], header[id]');
         const navLinkEls = document.querySelectorAll('.nav-links a');
         const observer = new IntersectionObserver(entries => {
@@ -397,7 +740,9 @@
         }, { threshold: 0.45 });
         sections.forEach(s => observer.observe(s));
 
-        // ── Scroll Reveal ──────────────────────────────
+        /* ══════════════════════════════════════
+           SCROLL REVEAL
+        ══════════════════════════════════════ */
         const revealEls = document.querySelectorAll('.reveal');
         const revealObs = new IntersectionObserver(entries => {
             entries.forEach((entry, i) => {
@@ -409,7 +754,9 @@
         }, { threshold: 0.12 });
         revealEls.forEach(el => revealObs.observe(el));
 
-        // ── Search Filter ──────────────────────────────
+        /* ══════════════════════════════════════
+           SEARCH FILTER
+        ══════════════════════════════════════ */
         document.getElementById('searchInput').addEventListener('keyup', function (e) {
             const filter = e.target.value.toLowerCase().trim();
             document.querySelectorAll('.app-card').forEach(card => {
